@@ -6,7 +6,7 @@
 
  定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
 
-
+```
 /*
   解题思路： 
   我们可以设计两个栈：StackDate和StackMin，一个就是普通的栈，另外一个存储push进来的最小值。 
@@ -20,11 +20,14 @@
 最后是getMin操作 
 　　由上就可知，StackMin中存储的数据就是当前最小的，所以只要返回StackMin中的栈顶元素就可以了。
 */
+```
+
+```
 import java.util.Stack;
 public class Solution {
     private Stack<Integer> stackDate;
     private Stack<Integer> stackMin;
-  
+
     public Solution(){
     	stackDate = new Stack<>();
     	stackMin = new Stack<>();
@@ -37,7 +40,7 @@ public class Solution {
     		stackMin.push(node);
     	}
     }
-  
+      
     public void pop() {
     	 if(stackDate.isEmpty()){
          	throw new RuntimeException("This stack is empty!");
@@ -47,7 +50,7 @@ public class Solution {
     	 }
     	 stackDate.pop();
     }
-  
+      
     public int top() {
     	if(stackDate.isEmpty()){
          	throw new RuntimeException("This stack is empty!");
@@ -58,7 +61,7 @@ public class Solution {
     	 }
     	return value;
     }
-  
+      
     public int min() {
         if(stackMin.isEmpty()){
         	throw new RuntimeException("This stack is empty!");
@@ -67,8 +70,10 @@ public class Solution {
         }
     }
 }
-
-题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。 解题思路 思路：利用一个辅助栈来存放最小值 栈 3，4，2，5，1 辅助栈 3，3，2，2，1 每入栈一次，就与辅助栈顶比较大小，如果小就入栈，如果大就入栈当前的辅助栈顶； 当出栈时，辅助栈也要出栈 这种做法可以保证辅助栈顶一定都当前栈的最小值 我的答案 import java.util.Stack;
+```
+题目描述 定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。 解题思路 思路：利用一个辅助栈来存放最小值 栈 3，4，2，5，1 辅助栈 3，3，2，2，1 每入栈一次，就与辅助栈顶比较大小，如果小就入栈，如果大就入栈当前的辅助栈顶； 当出栈时，辅助栈也要出栈 这种做法可以保证辅助栈顶一定都当前栈的最小值 我的答案 
+```
+import java.util.Stack;
 public class Solution {
     //存放元素
     Stack<Integer> stack1 = new Stack<Integer>();
@@ -104,3 +109,4 @@ public class Solution {
         return stack2.peek();
     }
 }
+```
