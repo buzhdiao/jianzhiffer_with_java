@@ -12,5 +12,5 @@ for md_file in list(work_dir.glob('*.md')):
     pdf_file_name = md_file_name.replace('.md', '.pdf')
     pdf_file = export_pdf_dir / pdf_file_name
     
-    cmd = '''pandoc "{}" -o "{}" --pdf-engine=xelatex -V mainfont='PingFang SC' --template=template.tex".format(md_file, pdf_file)'''
+    cmd = "pandoc '{}' -o '{}' --pdf-engine=xelatex -V mainfont='Times New Roman'".format(md_file, pdf_file)
     os.system(cmd)
