@@ -1,2 +1,4 @@
 
 batch-markdown-to-pdf.py
+*.pdf
+
